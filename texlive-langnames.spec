@@ -1,6 +1,6 @@
 Name:		texlive-langnames
 Version:	64376
-Release:	1
+Release:	2
 Summary:	Name languages and their genetic affiliations consistently
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/langnames
