@@ -1,5 +1,5 @@
 Name:		texlive-langnames
-Version:	65502
+Version:	69101
 Release:	1
 Summary:	Name languages and their genetic affiliations consistently
 Group:		Publishing
