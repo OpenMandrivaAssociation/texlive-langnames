@@ -3,7 +3,7 @@ Version:	69101
 Release:	1
 Summary:	Name languages and their genetic affiliations consistently
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/langnames
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/langnames
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.doc.r%{version}.tar.xz
