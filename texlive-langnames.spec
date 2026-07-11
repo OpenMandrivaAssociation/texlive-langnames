@@ -1,44 +1,26 @@
-Name:		texlive-langnames
-Version:	69101
-Release:	1
+%global tl_name langnames
+%global tl_revision 69101
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.0.0
+Release:	%{tl_revision}.1
 Summary:	Name languages and their genetic affiliations consistently
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/langnames
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/langnames.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package attempts to make the typing of language names,
-codes, and families slightly easier by providing macros to
-access pre-defined language--code--family combinations from two
-important databases, as well as the possibility to create new
-combinations. It may be particularly useful for large,
-collaborative projects as well as typologically minded ones
-with a variety of language examples.
+This package attempts to make the typing of language names, codes, and
+families slightly easier by providing macros to access pre-defined
+language--code--family combinations from two important databases, as
+well as the possibility to create new combinations. It may be
+particularly useful for large, collaborative projects as well as
+typologically minded ones with a variety of language examples.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/langnames
-%{_texmfdistdir}/tex/latex/langnames
-%doc %{_texmfdistdir}/doc/latex/langnames
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
